@@ -1,4 +1,4 @@
-import { Text, Center, Divider } from "@mantine/core";
+import { Text, Center } from "@mantine/core";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
