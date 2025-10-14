@@ -5,11 +5,13 @@ import HomePage from "./pages/home/Home";
 import PortfolioPage from "./pages/portfolio/Portfolio";
 import Contact from "./pages/contact/Contact";
 import Footer from "./components/footer/Footer";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   return (
     <>
-      <Header></Header>
+      <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/pricing" element={<PricingPage />}></Route>

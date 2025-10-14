@@ -21,13 +21,38 @@ function Contact() {
   const theme = useMantineTheme();
 
   const openingHours = [
-    { day: "Monday", hours: "09:00 - 18:00" },
-    { day: "Tuesday", hours: "09:00 - 18:00" },
-    { day: "Wednesday", hours: "09:00 - 18:00" },
-    { day: "Thursday", hours: "09:00 - 18:00" },
-    { day: "Friday", hours: "09:00 - 17:00" },
-    { day: "Saturday", hours: "Closed" },
-    { day: "Sunday", hours: "Closed" },
+    {
+      day: "Pondělí",
+      hours: "08:00 – 12:00",
+      break: "12:00 – 13:00",
+      afternoon: "13:00 – 17:00",
+    },
+    {
+      day: "Úterý",
+      hours: "08:00 – 12:00",
+      break: "12:00 – 13:00",
+      afternoon: "13:00 – 17:00",
+    },
+    {
+      day: "Středa",
+      hours: "08:00 – 12:00",
+      break: "12:00 – 13:00",
+      afternoon: "13:00 – 17:00",
+    },
+    {
+      day: "Čtvrtek",
+      hours: "08:00 – 12:00",
+      break: "12:00 – 13:00",
+      afternoon: "13:00 – 17:00",
+    },
+    {
+      day: "Pátek",
+      hours: "08:00 – 12:00",
+      break: "12:00 – 13:00",
+      afternoon: "13:00 – 17:00",
+    },
+    { day: "Sobota", hours: "09:00 – 12:00", afternoon: "Zavřeno" },
+    { day: "Neděle", hours: "Zavřeno", afternoon: "Zavřeno" },
   ];
 
   return (
@@ -128,9 +153,8 @@ function Contact() {
               <th style={{ textAlign: "left", padding: "0.75rem 1rem" }}>
                 Den
               </th>
-              <th style={{ textAlign: "left", padding: "0.75rem 1rem" }}>
-                Hodiny
-              </th>
+              <th style={{ textAlign: "left" }}>Dopoledne</th>
+              <th style={{ textAlign: "left" }}>Odpoledne</th>
             </tr>
           </thead>
           <tbody>
@@ -153,8 +177,9 @@ function Contact() {
                 }}
               >
                 <td style={{ padding: "0.75rem 1rem" }}>{item.day}</td>
-                <td style={{ padding: "0.75rem 1rem", fontWeight: 600 }}>
-                  {item.hours}
+                <td style={{ fontWeight: 600 }}>{item.hours}</td>
+                <td style={{ fontWeight: 600 }}>
+                  {item.afternoon && <Text>{item.afternoon}</Text>}
                 </td>
               </tr>
             ))}

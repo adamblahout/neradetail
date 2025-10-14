@@ -126,7 +126,7 @@ const PricingPage = () => {
                 <service.icon size={32} />
               </ThemeIcon>
               <Title order={3}>{service.title}</Title>
-              <Text fw={700} fz="xl" c="blue">
+              <Text fw={800} fz="xl" c="cyan">
                 {service.price}
               </Text>
               <Text c="dimmed" ta="center" fz="sm">

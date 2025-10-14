@@ -113,7 +113,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Container size="lg" py="5rem">
+      <Container size="lg" py="lg">
         <Stack align="center" mb="3rem">
           <Title order={2} fz="2.5rem" fw={800} ta="center">
             Péče o vaše vozidlo od A do Z
