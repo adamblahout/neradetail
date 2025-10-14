@@ -14,6 +14,7 @@ import {
   useMantineTheme,
   useMantineColorScheme,
   SimpleGrid,
+  Center,
 } from "@mantine/core";
 import { IconUser, IconMapPin, IconMail, IconPhone } from "@tabler/icons-react";
 import { useRef } from "react";
@@ -60,7 +61,7 @@ function Contact() {
 
   return (
     <Container size="lg" pt="xl">
-      <Stack align="left" mb="3rem">
+      <Stack align="left" mb="lg">
         <Title order={1} fz="3rem" fw={800}>
           Kontakt
         </Title>
@@ -70,100 +71,89 @@ function Contact() {
         </Text>
       </Stack>
 
-      <Card
-        shadow="lg"
-        radius="xl"
-        p="xl"
-        withBorder
-        mb="3rem"
-        style={{
-          background:
-            colorScheme === "dark"
-              ? "linear-gradient(145deg, rgba(30,30,30,1) 0%, rgba(45,45,45,1) 100%)"
-              : "linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%)",
-          transition: "all 0.3s ease",
-        }}
-      >
-        <Stack align="center" gap="lg">
-          <Title order={3} ta="center" fw={700}>
-            Kontaktní informace
-          </Title>
-          <SimpleGrid
-            cols={{ xs: 1, sm: 2 }}
-            spacing="xl"
-            verticalSpacing="xl"
-            style={{ width: "100%", maxWidth: 700 }}
-          >
-            <Group wrap="nowrap" gap="md">
-              <ThemeIcon size={50} radius="xl">
-                <IconUser size={24} />
-              </ThemeIcon>
-              <Box>
-                <Text fw={600} fz="lg">
-                  Martin Bonaventura
-                </Text>
-                <Text c="dimmed" fz="sm">
-                  Majitel
-                </Text>
-              </Box>
-            </Group>
+      <Card shadow="lg" radius="xl" p="xl" mb="lg">
+        <Center>
+          <Stack align="center" gap="lg" justify="center">
+            <Title order={3} ta="center" fw={700}>
+              Kontaktní informace
+            </Title>
+            <SimpleGrid
+              cols={{ xs: 1, sm: 2 }}
+              spacing="100"
+              verticalSpacing="xl"
+              style={{ width: "100%", maxWidth: 700 }}
+            >
+              <Group wrap="nowrap" gap="md">
+                <ThemeIcon size={50} radius="xl">
+                  <IconUser size={24} />
+                </ThemeIcon>
+                <Box>
+                  <Text fw={600} fz="lg">
+                    Martin Bonaventura
+                  </Text>
+                  <Text c="dimmed" fz="sm">
+                    Majitel
+                  </Text>
+                </Box>
+              </Group>
 
-            <Group wrap="nowrap" gap="md">
-              <ThemeIcon size={50} radius="xl">
-                <IconMapPin size={24} />
-              </ThemeIcon>
-              <Box>
-                <Text fw={600} fz="lg">
-                  Neratovice, Ostrovní 154
-                </Text>
-                <Anchor
-                  component="button"
-                  onClick={() =>
-                    mapRef.current?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  fz="sm"
-                  c="blue.5"
-                >
-                  Zobrazit na mapě
-                </Anchor>
-              </Box>
-            </Group>
+              <Group wrap="nowrap" gap="md">
+                <ThemeIcon size={50} radius="xl">
+                  <IconMapPin size={24} />
+                </ThemeIcon>
+                <Box>
+                  <Text fw={600} fz="lg">
+                    Neratovice, Ostrovní 154
+                  </Text>
+                  <Anchor
+                    component="button"
+                    onClick={() =>
+                      mapRef.current?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    fz="sm"
+                    c="blue.5"
+                  >
+                    Zobrazit na mapě
+                  </Anchor>
+                </Box>
+              </Group>
 
-            <Group wrap="nowrap" gap="md">
-              <ThemeIcon size={50} radius="xl">
-                <IconMail size={24} />
-              </ThemeIcon>
-              <Box>
-                <Anchor
-                  href="mailto:bonaventura.martin@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  fw={600}
-                  fz="lg"
-                >
-                  bonaventura.martin@gmail.com
-                </Anchor>
-                <Text c="dimmed" fz="sm">
-                  Odpovídám obvykle do 24 hodin
-                </Text>
-              </Box>
-            </Group>
+              <Group wrap="nowrap" gap="md">
+                <ThemeIcon size={50} radius="xl">
+                  <IconMail size={24} />
+                </ThemeIcon>
+                <Box>
+                  <Anchor
+                    href="mailto:bonaventura.martin@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    fw={600}
+                    fz="lg"
+                  >
+                    bonaventura.martin@gmail.com
+                  </Anchor>
+                  <Text c="dimmed" fz="sm">
+                    Odpovídám obvykle do 24 hodin
+                  </Text>
+                </Box>
+              </Group>
 
-            <Group wrap="nowrap" gap="md">
-              <ThemeIcon size={50} radius="xl">
-                <IconPhone size={24} />
-              </ThemeIcon>
-              <Box>
-                <Anchor href="tel:+420603162356" fw={600} fz="lg">
-                  +420 603 162 356
-                </Anchor>
-                <Text c="dimmed" fz="sm">
-                  Po–Pá 8:00–17:00
-                </Text>
-              </Box>
-            </Group>
-          </SimpleGrid>
-        </Stack>
+              <Group wrap="nowrap" gap="md">
+                <ThemeIcon size={50} radius="xl">
+                  <IconPhone size={24} />
+                </ThemeIcon>
+                <Box>
+                  <Anchor href="tel:+420603162356" fw={600} fz="lg">
+                    +420 603 162 356
+                  </Anchor>
+                  <Text c="dimmed" fz="sm">
+                    Po–Pá 8:00–17:00
+                  </Text>
+                </Box>
+              </Group>
+            </SimpleGrid>
+          </Stack>
+        </Center>
       </Card>
 
       <Box
