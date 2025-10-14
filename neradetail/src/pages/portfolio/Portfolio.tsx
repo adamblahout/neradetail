@@ -55,7 +55,7 @@ const Portfolio = () => {
         <Text c="dimmed" fz="lg" mb="sm">
           Prohlédněte si naše realizace čištění interiérů a exteriérů automobilů
           a nechte se inspirovat proměnami, které dokážeme vytvořit. Každé
-          vozidlo má svůj příběh — my mu pomáháme znovu zazářit. dokonalosti.
+          vozidlo má svůj příběh — my mu pomáháme znovu zazářit.
         </Text>
       </Box>
 
