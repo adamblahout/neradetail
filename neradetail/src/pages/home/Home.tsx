@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Container,
   Title,
@@ -18,9 +16,7 @@ import {
   IconShieldHalf,
   IconSun,
   IconTools,
-  IconChevronDown,
 } from "@tabler/icons-react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./chevron.css";
 
@@ -57,18 +53,6 @@ const HomePage = () => {
       desc: "Zlepšení viditelnosti a vzhledu vozidla.",
     },
   ];
-  const [animateChevron, setAnimateChevron] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => setAnimateChevron(false);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleChevronClick = () => {
-    setAnimateChevron(false);
-    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-  };
 
   return (
     <>
@@ -127,19 +111,6 @@ const HomePage = () => {
             </Button>
           </Group>
         </div>
-      </div>
-      <div
-        onClick={handleChevronClick}
-        style={{
-          position: "absolute",
-          bottom: "20px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          cursor: "pointer",
-          animation: animateChevron ? "bounce 1s infinite" : "none",
-        }}
-      >
-        <IconChevronDown size={48} stroke={2} />
       </div>
 
       <Container size="lg" py="5rem">
