@@ -53,14 +53,9 @@ const Portfolio = () => {
           Naše Galerie
         </Title>
         <Text c="dimmed" fz="lg" mb="sm">
-          Objevte naše pečlivě navržené projekty, které spojují moderní estetiku
-          s funkčností. Každý detail je promyšlený a odráží náš závazek k
-          dokonalosti.
-        </Text>
-        <Text c="dimmed" fz="lg">
-          Prohlédněte si naše interiéry i exteriéry a nechte se inspirovat
-          možnostmi, které můžeme vytvořit pro váš prostor. Každý projekt je
-          unikátní a vypráví svůj vlastní příběh.
+          Prohlédněte si naše realizace čištění interiérů a exteriérů automobilů
+          a nechte se inspirovat proměnami, které dokážeme vytvořit. Každé
+          vozidlo má svůj příběh — my mu pomáháme znovu zazářit. dokonalosti.
         </Text>
       </Box>
 

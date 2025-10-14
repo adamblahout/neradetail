@@ -83,7 +83,7 @@ const HomePage = () => {
           }}
         >
           <Title order={1} fz="3.5rem" fw={900} mb="1rem">
-            Profesionální ruční mytí a detailing vozidel
+            Odborné ruční mytí a detailing vozidel
           </Title>
           <Text fz="lg" mb="2rem">
             Vaše auto si zaslouží tu nejlepší péči – od ručního mytí po

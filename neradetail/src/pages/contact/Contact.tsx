@@ -63,8 +63,7 @@ function Contact() {
         </Title>
         <Text c="dimmed" fz={"lg"} maw={600}>
           Máte dotaz nebo si chcete domluvit termín? Neváhejte mě kontaktovat
-          telefonicky nebo e-mailem. Sídlím v Neratovicích a rád vám pomohu s
-          péčí o vaše vozidlo.
+          telefonicky nebo e-mailem.
         </Text>
       </Stack>
 
