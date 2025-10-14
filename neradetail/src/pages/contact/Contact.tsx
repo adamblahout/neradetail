@@ -108,7 +108,6 @@ function Contact() {
                       mapRef.current?.scrollIntoView({ behavior: "smooth" })
                     }
                     fz="sm"
-                    c="blue.5"
                   >
                     Zobrazit na mapě
                   </Anchor>
