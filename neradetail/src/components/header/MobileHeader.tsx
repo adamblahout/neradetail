@@ -1,4 +1,12 @@
-import { ActionIcon, Box, Burger, Drawer, Flex, rem } from "@mantine/core";
+import {
+  ActionIcon,
+  Box,
+  Burger,
+  Drawer,
+  Flex,
+  rem,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { IconMoon, IconSun, IconX } from "@tabler/icons-react";
 import { navLinks } from "./navLinks.template";
 import { Link, useLocation } from "react-router-dom";
@@ -54,8 +62,10 @@ const MobileHeader = ({ colorScheme, toggleColorScheme }: HeaderProps) => {
                 onClick={close} // Close drawer on link click
                 style={{
                   color: isActive(link.href)
-                    ? "var(--mantine-color-blue-4)"
-                    : "white",
+                    ? "var(--mantine-color-cyan-6)"
+                    : dark
+                    ? "white"
+                    : "#1a1a1a",
                   textDecoration: "none",
                   fontWeight: 700,
                   fontSize: "1.25rem",
