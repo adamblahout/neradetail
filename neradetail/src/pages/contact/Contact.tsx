@@ -16,6 +16,7 @@ import {
   SimpleGrid,
   Center,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconUser, IconMapPin, IconMail, IconPhone } from "@tabler/icons-react";
 import { useRef } from "react";
 
@@ -23,6 +24,7 @@ function Contact() {
   const mapRef = useRef<HTMLDivElement>(null);
   const { colorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
+  const isLargeScreen = useMediaQuery(`(min-width: ${theme.breakpoints.md})`);
 
   const openingHours = [
     {
@@ -199,8 +201,22 @@ function Contact() {
               <th style={{ textAlign: "left", padding: "0.75rem 1rem" }}>
                 Den
               </th>
-              <th style={{ textAlign: "left" }}>Dopoledne</th>
-              <th style={{ textAlign: "left" }}>Odpoledne</th>
+              <th
+                style={{
+                  textAlign: isLargeScreen ? "center" : "left",
+                  padding: "0.75rem 1rem",
+                }}
+              >
+                Dopoledne
+              </th>
+              <th
+                style={{
+                  textAlign: isLargeScreen ? "right" : "center",
+                  padding: "0.75rem 1rem",
+                }}
+              >
+                Odpoledne
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -223,8 +239,20 @@ function Contact() {
                 }}
               >
                 <td style={{ padding: "0.75rem 1rem" }}>{item.day}</td>
-                <td style={{ fontWeight: 600 }}>{item.hours}</td>
-                <td style={{ fontWeight: 600 }}>
+                <td
+                  style={{
+                    fontWeight: 600,
+                    textAlign: isLargeScreen ? "center" : "left",
+                  }}
+                >
+                  {item.hours}
+                </td>
+                <td
+                  style={{
+                    fontWeight: 600,
+                    textAlign: isLargeScreen ? "right" : "center",
+                  }}
+                >
                   {item.afternoon && <Text>{item.afternoon}</Text>}
                 </td>
               </tr>
