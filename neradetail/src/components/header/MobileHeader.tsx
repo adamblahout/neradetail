@@ -1,12 +1,4 @@
-import {
-  ActionIcon,
-  Box,
-  Burger,
-  Drawer,
-  Flex,
-  rem,
-  useMantineColorScheme,
-} from "@mantine/core";
+import { ActionIcon, Box, Burger, Drawer, Flex, rem } from "@mantine/core";
 import { IconMoon, IconSun, IconX } from "@tabler/icons-react";
 import { navLinks } from "./navLinks.template";
 import { Link, useLocation } from "react-router-dom";
