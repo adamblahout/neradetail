@@ -74,9 +74,6 @@ function Contact() {
       <Card shadow="lg" radius="xl" p="xl" mb="lg">
         <Center>
           <Stack align="center" gap="lg" justify="center">
-            <Title order={3} ta="center" fw={700}>
-              Kontaktní informace
-            </Title>
             <SimpleGrid
               cols={{ xs: 1, sm: 2 }}
               spacing="100"
