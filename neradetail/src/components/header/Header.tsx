@@ -1,7 +1,4 @@
-"use client";
-
 import { useMantineColorScheme, Flex } from "@mantine/core";
-
 import DesktopHeader from "./DesktopHeader";
 import Logo from "./Logo";
 import MobileHeader from "./MobileHeader";

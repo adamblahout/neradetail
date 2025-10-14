@@ -17,7 +17,7 @@ const DesktopHeader = ({ colorScheme, toggleColorScheme }: HeaderProps) => {
             to={link.href}
             style={{
               color: isActive(link.href)
-                ? "var(--mantine-color-cyan-7)"
+                ? "var(--mantine-color-cyan-6)"
                 : "white",
               textDecoration: "none",
               fontWeight: 700,

@@ -67,7 +67,6 @@ const MobileHeader = ({ colorScheme, toggleColorScheme }: HeaderProps) => {
             ))}
           </Flex>
 
-          {/* Theme toggle bottom-right */}
           <ActionIcon
             variant="filled"
             size="xl"
