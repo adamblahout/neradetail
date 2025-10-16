@@ -16,10 +16,10 @@ import {
   IconBus,
   IconEngine,
   IconDroplet,
-  IconBubble,
   IconMotorbike,
   IconArrowBigDown,
   IconBike,
+  IconChartBubble,
 } from "@tabler/icons-react";
 
 const services = [
@@ -60,7 +60,7 @@ const services = [
     description: "Základní ostřik vozidla",
   },
   {
-    icon: IconBubble,
+    icon: IconChartBubble,
     title: "Ostřik aktivní pěnou",
     price: "149 Kč",
     description: "Pěnové mytí pro hlubší čištění",
@@ -103,24 +103,7 @@ const PricingPage = () => {
         verticalSpacing="2rem"
       >
         {services.map((service) => (
-          <Card
-            key={service.title}
-            shadow="md"
-            radius="lg"
-            p="xl"
-            withBorder
-            style={{
-              transition: "transform 0.2s ease, box-shadow 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "";
-            }}
-          >
+          <Card key={service.title} shadow="md" radius="lg" p="xl" withBorder>
             <Stack align="center" gap="sm">
               <ThemeIcon variant="light" size={60} radius="xl">
                 <service.icon size={32} />

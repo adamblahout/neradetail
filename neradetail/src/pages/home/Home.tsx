@@ -9,46 +9,43 @@ import {
   Stack,
   Group,
 } from "@mantine/core";
-import {
-  IconDroplet,
-  IconBrush,
-  IconVacuumCleaner,
-  IconShieldHalf,
-  IconSun,
-  IconTools,
-} from "@tabler/icons-react";
+import { MdLocalCarWash } from "react-icons/md";
+import { GiCarSeat } from "react-icons/gi";
+import { TbShieldHalf } from "react-icons/tb";
+import { GiFogLight } from "react-icons/gi";
+import { GiDroplets } from "react-icons/gi";
+import { MdAutoFixHigh } from "react-icons/md";
 import { Link } from "react-router-dom";
-import "./chevron.css";
 
 const HomePage = () => {
   const services = [
     {
-      icon: IconDroplet,
+      icon: <MdLocalCarWash />,
       title: "Ruční mytí vozidel",
       desc: "Šetrné a precizní mytí karoserie i kol.",
     },
     {
-      icon: IconVacuumCleaner,
+      icon: <GiCarSeat />,
       title: "Čištění interiéru",
       desc: "Tepování sedaček, ošetření kůže a detailní úklid.",
     },
     {
-      icon: IconBrush,
+      icon: <MdAutoFixHigh />,
       title: "Korekce a leštění laku",
       desc: "Obnova lesku, odstranění škrábanců a oxidace.",
     },
     {
-      icon: IconShieldHalf,
+      icon: <TbShieldHalf />,
       title: "Keramická ochrana",
       desc: "Dlouhodobá ochrana karoserie proti nečistotám.",
     },
     {
-      icon: IconSun,
+      icon: <GiDroplets />,
       title: "Aplikace vosku",
       desc: "Hloubková ochrana a vysoký lesk laku.",
     },
     {
-      icon: IconTools,
+      icon: <GiFogLight />,
       title: "Renovace světlometů",
       desc: "Zlepšení viditelnosti a vzhledu vozidla.",
     },
@@ -127,28 +124,10 @@ const HomePage = () => {
 
         <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="2rem">
           {services.map((service) => (
-            <Card
-              key={service.title}
-              shadow="md"
-              radius="lg"
-              p="xl"
-              withBorder
-              style={{
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.boxShadow =
-                  "0 10px 25px rgba(0,0,0,0.15)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "";
-              }}
-            >
+            <Card key={service.title} shadow="md" radius="lg" p="xl" withBorder>
               <Stack align="center" gap="sm">
                 <ThemeIcon variant="light" size={60} radius="xl" color="blue">
-                  <service.icon size={32} />
+                  <div style={{ fontSize: "2rem" }}>{service.icon}</div>
                 </ThemeIcon>
                 <Title order={3}>{service.title}</Title>
                 <Text c="dimmed" ta="center" fz="sm">

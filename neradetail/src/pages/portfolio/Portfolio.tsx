@@ -11,12 +11,12 @@ import {
 } from "@mantine/core";
 
 const interiorImages = import.meta.glob(
-  "../../assets/images/interior/*.{jpg,png,jpeg}",
+  "../../assets/images/interior/*.{jpg,png,jpeg,webp}",
   { eager: true, import: "default" }
 ) as Record<string, string>;
 
 const exteriorImages = import.meta.glob(
-  "../../assets/images/exterior/*.{jpg,png,jpeg}",
+  "../../assets/images/exterior/*.{jpg,png,jpeg,webp}",
   { eager: true, import: "default" }
 ) as Record<string, string>;
 
