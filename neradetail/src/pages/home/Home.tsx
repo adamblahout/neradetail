@@ -16,6 +16,7 @@ import { GiFogLight } from "react-icons/gi";
 import { GiDroplets } from "react-icons/gi";
 import { MdAutoFixHigh } from "react-icons/md";
 import { Link } from "react-router-dom";
+import backgroundUrl from "../../assets/images/black-porsche.avif";
 
 const HomePage = () => {
   const services = [
@@ -56,8 +57,7 @@ const HomePage = () => {
       <div
         style={{
           position: "relative",
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: `url(${backgroundUrl})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           minHeight: "100vh",
