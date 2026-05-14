@@ -14,7 +14,7 @@ export function Header() {
   return (
     <header
       style={{
-        backgroundColor: colorScheme === "dark" ? "#1a1a1a" : "#222",
+        backgroundColor: "#1a1a1a",
         color: "white",
         boxShadow: "0 1px 3px rgba(0,0,0,0.25)",
         transition: "background-color 200ms ease",

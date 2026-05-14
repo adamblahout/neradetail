@@ -1,70 +1,35 @@
 "use client";
 
 import {
-  Container,
-  Title,
-  Text,
-  Card,
-  Stack,
-  Group,
-  ThemeIcon,
   Anchor,
-  Divider,
   Box,
-  useMantineTheme,
-  useMantineColorScheme,
-  SimpleGrid,
+  Card,
   Center,
+  Container,
+  Divider,
+  Group,
+  SimpleGrid,
+  Stack,
+  Text,
+  ThemeIcon,
+  Title,
 } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
-import { IconUser, IconMapPin, IconMail, IconPhone } from "@tabler/icons-react";
+import {
+  IconMail,
+  IconMapPin,
+  IconMessageCircle,
+  IconPhone,
+  IconUser,
+} from "@tabler/icons-react";
 import { useRef } from "react";
 
 function Contact() {
   const mapRef = useRef<HTMLDivElement>(null);
-  const { colorScheme } = useMantineColorScheme();
-  const theme = useMantineTheme();
-  const isLargeScreen = useMediaQuery(`(min-width: ${theme.breakpoints.md})`);
-
-  const openingHours = [
-    {
-      day: "Pondělí",
-      hours: "08:00 – 12:00",
-      break: "12:00 – 13:00",
-      afternoon: "13:00 – 17:00",
-    },
-    {
-      day: "Úterý",
-      hours: "08:00 – 12:00",
-      break: "12:00 – 13:00",
-      afternoon: "13:00 – 17:00",
-    },
-    {
-      day: "Středa",
-      hours: "08:00 – 12:00",
-      break: "12:00 – 13:00",
-      afternoon: "13:00 – 17:00",
-    },
-    {
-      day: "Čtvrtek",
-      hours: "08:00 – 12:00",
-      break: "12:00 – 13:00",
-      afternoon: "13:00 – 17:00",
-    },
-    {
-      day: "Pátek",
-      hours: "08:00 – 12:00",
-      break: "12:00 – 13:00",
-      afternoon: "13:00 – 17:00",
-    },
-    { day: "Sobota", hours: "09:00 – 12:00", afternoon: "Zavřeno" },
-    { day: "Neděle", hours: "Zavřeno", afternoon: "Zavřeno" },
-  ];
 
   return (
     <Container size="lg" pt="xl">
       <Stack align="left" mb="lg">
-        <Title order={1} fz="3rem" fw={800}>
+        <Title order={1} fz="2.5rem" fw={700}>
           Kontakt
         </Title>
         <Text c="dimmed" fz={"lg"}>
@@ -154,112 +119,32 @@ function Contact() {
         </Center>
       </Card>
 
-      <Box
-        style={{
-          width: "100%",
-          borderRadius: "8px",
-          overflow: "hidden",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
-        }}
-      >
-        <Title order={2} fz="2rem" fw={700} mb="md">
+      <Box>
+        <Title order={2} fz="2.5rem" fw={700}>
           Otevírací doba
         </Title>
-        <Text c="dimmed" fz={"lg"} mb={"md"}>
-          Vždy rádi pomůžeme. Níže najdete naše otevírací hodiny, abyste si
-          mohli naplánovat návštěvu nebo nás kontaktovat během pracovní doby.
-        </Text>
       </Box>
 
-      <Box
-        style={{
-          width: "100%",
-          borderRadius: "8px",
-          overflow: "hidden",
-          boxShadow:
-            colorScheme === "dark"
-              ? "0 4px 10px rgba(255,255,255,0.05)"
-              : "0 4px 10px rgba(0,0,0,0.05)",
-        }}
-      >
-        <table
-          style={{
-            width: "100%",
-            borderCollapse: "separate",
-            borderSpacing: "0",
-          }}
-        >
-          <thead
-            style={{
-              backgroundColor:
-                colorScheme === "dark"
-                  ? theme.colors.dark[6]
-                  : theme.colors.gray[0],
-            }}
-          >
-            <tr>
-              <th style={{ textAlign: "left", padding: "0.75rem 1rem" }}>
-                Den
-              </th>
-              <th
-                style={{
-                  textAlign: isLargeScreen ? "center" : "left",
-                  padding: "0.75rem 1rem",
-                }}
-              >
-                Dopoledne
-              </th>
-              <th
-                style={{
-                  textAlign: isLargeScreen ? "right" : "center",
-                  padding: "0.75rem 1rem",
-                }}
-              >
-                Odpoledne
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {openingHours.map((item, index) => (
-              <tr
-                key={item.day}
-                style={{
-                  borderBottom:
-                    colorScheme === "dark"
-                      ? `1px solid ${theme.colors.dark[4]}`
-                      : `1px solid ${theme.colors.gray[2]}`,
-                  backgroundColor:
-                    colorScheme === "dark"
-                      ? index % 2 === 0
-                        ? theme.colors.dark[7]
-                        : theme.colors.dark[6]
-                      : index % 2 === 0
-                      ? theme.white
-                      : theme.colors.gray[0],
-                }}
-              >
-                <td style={{ padding: "0.75rem 1rem" }}>{item.day}</td>
-                <td
-                  style={{
-                    fontWeight: 600,
-                    textAlign: isLargeScreen ? "center" : "left",
-                  }}
-                >
-                  {item.hours}
-                </td>
-                <td
-                  style={{
-                    fontWeight: 600,
-                    textAlign: isLargeScreen ? "right" : "center",
-                  }}
-                >
-                  {item.afternoon && <Text>{item.afternoon}</Text>}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Box>
+      <Card shadow="lg" radius="xl" p="xl" mb="lg">
+        <Center>
+          <Stack align="center" gap="md" maw={700}>
+            <ThemeIcon size={60} radius="xl" color="cyan">
+              <IconMessageCircle size={28} />
+            </ThemeIcon>
+
+            <Title order={3} ta="center" fw={700} fz={"1.8rem"}>
+              Individuální domluva
+            </Title>
+
+            <Text ta="center" lh={1.8}>
+              Každé vozidlo i zakázka je specifická, proto vše plánujeme a
+              naceňujeme individuálně na základě předchozí komunikace. Společně
+              si upřesníme rozsah služeb a navrhneme ideální postup i termín
+              realizace.
+            </Text>
+          </Stack>
+        </Center>
+      </Card>
 
       <Divider label="Kde mě najdete" labelPosition="center" my="xl" />
 

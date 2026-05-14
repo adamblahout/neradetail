@@ -1,124 +1,66 @@
 "use client";
 
 import {
+  Box,
+  Button,
   Card,
+  Container,
+  Stack,
   Text,
   Title,
-  SimpleGrid,
-  ThemeIcon,
-  Stack,
-  Container,
 } from "@mantine/core";
-import {
-  IconCar,
-  IconTruckDelivery,
-  IconTruck,
-  IconBus,
-  IconEngine,
-  IconDroplet,
-  IconMotorbike,
-  IconArrowBigDown,
-  IconBike,
-  IconChartBubble,
-} from "@tabler/icons-react";
-
-const services = [
-  {
-    icon: IconCar,
-    title: "Osobní",
-    price: "199 Kč",
-    description: "např. Škoda Octavia",
-  },
-  {
-    icon: IconTruckDelivery,
-    title: "Dodávka malá",
-    price: "239 Kč",
-    description: "např. VW Sharan",
-  },
-  {
-    icon: IconTruck,
-    title: "Dodávka střední",
-    price: "259 Kč",
-    description: "např. Mercedes Vito",
-  },
-  {
-    icon: IconBus,
-    title: "Dodávka maxi",
-    price: "349 Kč",
-    description: "např. Citroen Jumper",
-  },
-  {
-    icon: IconEngine,
-    title: "Mytí motoru",
-    price: "249 Kč",
-    description: "Čištění motorového prostoru",
-  },
-  {
-    icon: IconDroplet,
-    title: "Ostřik auta",
-    price: "od 40 Kč",
-    description: "Základní ostřik vozidla",
-  },
-  {
-    icon: IconChartBubble,
-    title: "Ostřik aktivní pěnou",
-    price: "149 Kč",
-    description: "Pěnové mytí pro hlubší čištění",
-  },
-  {
-    icon: IconMotorbike,
-    title: "Mytí motorky",
-    price: "100 Kč",
-    description: "Rychlé a šetrné mytí",
-  },
-  {
-    icon: IconArrowBigDown,
-    title: "Mytí spodku auta",
-    price: "90 Kč",
-    description: "Odstranění nečistot z podvozku",
-  },
-  {
-    icon: IconBike,
-    title: "Mytí jízdního kola",
-    price: "50 Kč",
-    description: "Pro cyklisty – rychlá očista",
-  },
-];
+import { useMediaQuery } from "@mantine/hooks";
+import { IconArrowRight } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 
 const PricingPage = () => {
+  const isMobile = useMediaQuery("(max-width: 48em)");
   return (
-    <Container size="lg" pt="xl">
-      <Stack align="center" mb="3rem">
-        <Title order={1} fz="3rem" fw={800} ta="center">
-          Ceník
-        </Title>
-        <Text c="dimmed" ta="center" maw={600}>
-          Kompletní nabídka ručního mytí vozidel a doplňkových služeb
-        </Text>
-      </Stack>
+    <Container size="sm" py="6rem">
+      <Stack align="center" gap="xl">
+        <Stack gap="sm" maw={700}>
+          <Title order={1} fz={{ base: "2.5rem", md: "3.5rem" }} fw={900}>
+            Ceník služeb
+          </Title>
 
-      <SimpleGrid
-        cols={{ base: 1, sm: 2, md: 3 }}
-        spacing="2rem"
-        verticalSpacing="2rem"
-      >
-        {services.map((service) => (
-          <Card key={service.title} shadow="md" radius="lg" p="xl" withBorder>
-            <Stack align="center" gap="sm">
-              <ThemeIcon variant="light" size={60} radius="xl">
-                <service.icon size={32} />
-              </ThemeIcon>
-              <Title order={3}>{service.title}</Title>
-              <Text fw={800} fz="xl" c="cyan">
-                {service.price}
+          <Text c="dimmed" lh={1.8} fz="lg">
+            Každé vozidlo vyžaduje individuální přístup. Finální cena se odvíjí
+            od velikosti vozu, aktuálního stavu a rozsahu požadovaných služeb.
+          </Text>
+        </Stack>
+
+        <Card shadow="xl" radius="2rem" p="3rem" withBorder maw={700} w="100%">
+          <Stack gap="xl">
+            <div>
+              <Text tt="uppercase" fw={700} c="cyan" fz="sm" mb="0.5rem">
+                Individuální nacenění
               </Text>
-              <Text c="dimmed" ta="center" fz="sm">
-                {service.description}
+
+              <Title order={2} fw={800} mb="md">
+                Každý detailing je jedinečný
+              </Title>
+
+              <Text c="dimmed" lh={1.8}>
+                Před realizací společně vybereme vhodný rozsah detailingu a
+                připravíme cenovou nabídku přesně podle potřeb vašeho vozidla.
               </Text>
-            </Stack>
-          </Card>
-        ))}
-      </SimpleGrid>
+            </div>
+
+            <Box ta={isMobile ? "center" : "right"}>
+              <Button
+                size="lg"
+                radius="xl"
+                color="cyan"
+                rightSection={<IconArrowRight size={18} />}
+                component={Link}
+                to="/contact"
+              >
+                Kontaktujte nás
+              </Button>
+            </Box>
+          </Stack>
+        </Card>
+      </Stack>
     </Container>
   );
 };

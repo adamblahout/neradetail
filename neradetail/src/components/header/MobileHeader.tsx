@@ -1,4 +1,4 @@
-import { ActionIcon, Box, Burger, Drawer, Flex, rem } from "@mantine/core";
+import { ActionIcon, Burger, Drawer, Flex, rem } from "@mantine/core";
 import { IconMoon, IconSun, IconX } from "@tabler/icons-react";
 import { navLinks } from "./navLinks.template";
 import { Link, useLocation } from "react-router-dom";
@@ -9,6 +9,7 @@ const MobileHeader = ({ colorScheme, toggleColorScheme }: HeaderProps) => {
   const [opened, { toggle, close }] = useDisclosure(false);
   const dark = colorScheme === "dark";
   const location = useLocation();
+
   const isActive = (href: string) => location.pathname === href;
 
   return (
@@ -18,66 +19,79 @@ const MobileHeader = ({ colorScheme, toggleColorScheme }: HeaderProps) => {
         onClick={toggle}
         size="lg"
         color="white"
-        style={{ display: "block" }}
         hiddenFrom="sm"
       />
+
       <Drawer
         opened={opened}
         onClose={close}
-        padding={0}
+        padding="xl"
         size="100%"
         withCloseButton={false}
+        styles={{
+          body: {
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            overflow: "hidden",
+          },
+        }}
       >
-        <Box style={{ position: "relative", height: "100vh" }}>
-          {/* Close button top-right */}
-          <ActionIcon
-            onClick={close}
-            size="xl"
-            variant="filled"
-            style={{ position: "absolute", top: rem(20), right: rem(20) }}
-          >
-            <IconX size={26} />
-          </ActionIcon>
+        {/* Close button */}
+        <ActionIcon
+          onClick={close}
+          size="xl"
+          variant="subtle"
+          style={{ position: "absolute", top: rem(20), right: rem(20) }}
+        >
+          <IconX size={26} />
+        </ActionIcon>
 
-          {/* Centered links */}
-          <Flex
-            direction="column"
-            align="center"
-            justify="center"
-            style={{ height: "100%" }}
-            gap="2rem"
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={close} // Close drawer on link click
-                style={{
-                  color: isActive(link.href)
-                    ? "var(--mantine-color-cyan-6)"
-                    : dark
+        {/* Navigation */}
+        <Flex
+          direction="column"
+          align="center"
+          gap="xl"
+          style={{ textAlign: "center" }}
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              to={link.href}
+              onClick={close}
+              style={{
+                color: isActive(link.href)
+                  ? "var(--mantine-color-cyan-6)"
+                  : dark
                     ? "white"
                     : "#1a1a1a",
-                  textDecoration: "none",
-                  fontWeight: 700,
-                  fontSize: "1.25rem",
-                  transition: "color 150ms ease",
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </Flex>
+                textDecoration: "none",
+                fontWeight: 700,
+                fontSize: "1.4rem",
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </Flex>
 
-          <ActionIcon
-            variant="filled"
-            size="xl"
-            onClick={toggleColorScheme}
-            style={{ position: "absolute", bottom: rem(30), right: rem(30) }}
-          >
-            {dark ? <IconSun size={26} /> : <IconMoon size={26} />}
-          </ActionIcon>
-        </Box>
+        {/* Theme toggle moved up (no cyan button, subtle icon) */}
+        <ActionIcon
+          variant="filled"
+          size="xl"
+          onClick={toggleColorScheme}
+          style={{
+            position: "absolute",
+            bottom: rem(20),
+            right: rem(20),
+            backgroundColor: "var(--mantine-color-cyan-6)",
+            color: "white",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+          }}
+        >
+          {dark ? <IconSun size={22} /> : <IconMoon size={22} />}
+        </ActionIcon>
       </Drawer>
     </>
   );

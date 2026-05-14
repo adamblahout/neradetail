@@ -9,8 +9,7 @@ import {
   Stack,
   Group,
 } from "@mantine/core";
-import { MdLocalCarWash } from "react-icons/md";
-import { GiCarSeat } from "react-icons/gi";
+import { GiCarDoor, GiCarSeat } from "react-icons/gi";
 import { TbShieldHalf } from "react-icons/tb";
 import { GiFogLight } from "react-icons/gi";
 import { GiDroplets } from "react-icons/gi";
@@ -20,11 +19,6 @@ import backgroundUrl from "../../assets/images/black-porsche.avif";
 
 const HomePage = () => {
   const services = [
-    {
-      icon: <MdLocalCarWash />,
-      title: "Ruční mytí vozidel",
-      desc: "Šetrné a precizní mytí karoserie i kol.",
-    },
     {
       icon: <GiCarSeat />,
       title: "Čištění interiéru",
@@ -49,6 +43,11 @@ const HomePage = () => {
       icon: <GiFogLight />,
       title: "Renovace světlometů",
       desc: "Zlepšení viditelnosti a vzhledu vozidla.",
+    },
+    {
+      icon: <GiCarDoor />,
+      title: "Oživení plastů",
+      desc: "Obnova barvy a ochrana plastových částí interiéru i exteriéru.",
     },
   ];
 
@@ -80,30 +79,13 @@ const HomePage = () => {
           }}
         >
           <Title order={1} fz="3.5rem" fw={900} mb="1rem">
-            Odborné ruční mytí a detailing vozidel
+            Interiérové čístění a detailing vozidel
           </Title>
           <Text fz="lg" mb="2rem">
-            Vaše auto si zaslouží tu nejlepší péči – od ručního mytí po
-            keramickou ochranu.
+            Vaše auto si zaslouží tu nejlepší péči
           </Text>
           <Group justify="center">
-            <Button
-              size="lg"
-              radius="xl"
-              color="var(--mantine-color-cyan-6)"
-              component={Link}
-              to="/pricing"
-            >
-              Zobrazit ceník
-            </Button>
-            <Button
-              size="lg"
-              radius="xl"
-              variant="white"
-              color="dark"
-              component={Link}
-              to="/contact"
-            >
+            <Button size="lg" radius="xl" component={Link} to="/contact">
               Kontaktujte nás
             </Button>
           </Group>
@@ -116,9 +98,9 @@ const HomePage = () => {
             Péče o vaše vozidlo od A do Z
           </Title>
           <Text c="dimmed" ta="center" maw={700}>
-            Provádíme kompletní ruční mytí a detailing vozidel – osobních aut,
-            dodávek i karavanů. Specializujeme se na čištění interiéru, leštění,
-            voskování a aplikaci keramických ochran.
+            Provádíme detailing vozidel – osobních aut, dodávek i karavanů.
+            Specializujeme se na čištění interiéru, leštění, voskování a
+            aplikaci keramických ochran.
           </Text>
         </Stack>
 
