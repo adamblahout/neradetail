@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const PricingPage = () => {
   const isMobile = useMediaQuery("(max-width: 48em)");
   return (
-    <Container size="sm" py="6rem">
+    <Container size="sm" py="6rem" flex={1}>
       <Stack align="center" gap="xl">
         <Stack gap="sm" maw={700}>
           <Title order={1} fz={{ base: "2.5rem", md: "3.5rem" }} fw={900}>

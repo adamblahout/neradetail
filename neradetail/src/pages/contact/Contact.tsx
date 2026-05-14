@@ -38,7 +38,7 @@ function Contact() {
         </Text>
       </Stack>
 
-      <Card shadow="lg" radius="xl" p="xl" mb="lg">
+      <Card shadow="lg" radius="xl" p="xl" mb="lg" withBorder>
         <Center>
           <Stack align="center" gap="lg" justify="center">
             <SimpleGrid
@@ -125,7 +125,7 @@ function Contact() {
         </Title>
       </Box>
 
-      <Card shadow="lg" radius="xl" p="xl" mb="lg">
+      <Card shadow="lg" radius="xl" p="xl" mb="lg" withBorder>
         <Center>
           <Stack align="center" gap="md" maw={700}>
             <ThemeIcon size={60} radius="xl" color="cyan">
