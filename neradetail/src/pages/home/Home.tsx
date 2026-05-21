@@ -9,11 +9,11 @@ import {
   Stack,
   Group,
 } from "@mantine/core";
-import { GiCarDoor, GiCarSeat } from "react-icons/gi";
+import { GiCarSeat } from "react-icons/gi";
 import { TbShieldHalf } from "react-icons/tb";
 import { GiFogLight } from "react-icons/gi";
 import { GiDroplets } from "react-icons/gi";
-import { MdAutoFixHigh } from "react-icons/md";
+import { MdAir, MdAutoFixHigh } from "react-icons/md";
 import { Link } from "react-router-dom";
 import backgroundUrl from "../../assets/images/black-porsche.avif";
 
@@ -45,9 +45,9 @@ const HomePage = () => {
       desc: "Zlepšení viditelnosti a vzhledu vozidla.",
     },
     {
-      icon: <GiCarDoor />,
-      title: "Oživení plastů",
-      desc: "Obnova barvy a ochrana plastových částí interiéru i exteriéru.",
+      icon: <MdAir />,
+      title: "Čištění klimatizace ozónem",
+      desc: "Profesionální ozónové čištění klimatizace a interiéru pro odstranění bakterií, zápachu a dezinfekci vozu.",
     },
   ];
 
